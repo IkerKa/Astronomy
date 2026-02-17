@@ -1,0 +1,159 @@
+# =====================================
+# SISTEMA SOLAR COMPLETO
+# =====================================
+
+# Sol (centro del sistema)
+sol = Body("Sol", 1.989e30, [0, 0, 0], [0, 0, 0], color='yellow')
+
+# =====================================
+# PLANETAS INTERIORES
+# =====================================
+
+# Mercurio
+mercurio_pos = [4.600e10, 0, 0]  # Perihelio: 0.307 UA
+mercurio_vel = [0, 58.98e3, 0]   # Velocidad en perihelio
+mercurio = Body("Mercurio", 3.301e23, mercurio_pos, mercurio_vel, color='#8C7853')
+
+# Venus
+venus_pos = [1.075e11, 0, 0]     # Perihelio: 0.718 UA
+venus_vel = [0, 35.26e3, 0]      # Velocidad orbital promedio
+venus = Body("Venus", 4.867e24, venus_pos, venus_vel, color='#FFC649')
+
+# Tierra
+tierra_pos = [1.471e11, 0, 0]    # Perihelio: 0.983 UA
+tierra_vel = [0, 30.29e3, 0]     # Velocidad en perihelio
+tierra = Body("Tierra", 5.972e24, tierra_pos, tierra_vel, color='#6B93D6')
+
+# Marte
+marte_pos = [2.067e11, 0, 0]     # Perihelio: 1.38 UA
+marte_vel = [0, 26.50e3, 0]      # Velocidad en perihelio
+marte = Body("Marte", 6.417e23, marte_pos, marte_vel, color='#CD5C5C')
+
+# =====================================
+# PLANETAS EXTERIORES
+# =====================================
+
+# Júpiter
+jupiter_pos = [7.405e11, 0, 0]   # Perihelio: 4.95 UA
+jupiter_vel = [0, 13.72e3, 0]    # Velocidad en perihelio
+jupiter = Body("Júpiter", 1.898e27, jupiter_pos, jupiter_vel, color='#D8CA9D')
+
+# Saturno
+saturno_pos = [1.352e12, 0, 0]   # Perihelio: 9.02 UA
+saturno_vel = [0, 10.18e3, 0]    # Velocidad en perihelio
+saturno = Body("Saturno", 5.683e26, saturno_pos, saturno_vel, color='#FAD5A5')
+
+# Urano
+urano_pos = [2.741e12, 0, 0]     # Perihelio: 18.3 UA
+urano_vel = [0, 7.11e3, 0]       # Velocidad en perihelio
+urano = Body("Urano", 8.681e25, urano_pos, urano_vel, color='#4FD0E7')
+
+# Neptuno
+neptuno_pos = [4.444e12, 0, 0]   # Perihelio: 29.7 UA
+neptuno_vel = [0, 5.50e3, 0]     # Velocidad en perihelio
+neptuno = Body("Neptuno", 1.024e26, neptuno_pos, neptuno_vel, color='#4B70DD')
+
+# =====================================
+# PLANETAS ENANOS
+# =====================================
+
+# Plutón (planeta enano)
+pluton_pos = [4.436e12, 0, 0]    # Perihelio: 29.6 UA
+pluton_vel = [0, 6.10e3, 0]      # Velocidad en perihelio
+pluton = Body("Plutón", 1.309e22, pluton_pos, pluton_vel, color='#AB9482')
+
+# Ceres (planeta enano en el cinturón de asteroides)
+ceres_pos = [3.82e11, 0, 0]      # Distancia promedio: 2.55 UA
+ceres_vel = [0, 17.9e3, 0]       # Velocidad orbital
+ceres = Body("Ceres", 9.39e20, ceres_pos, ceres_vel, color='#8C8C8C')
+
+# =====================================
+# ASTEROIDES PRINCIPALES
+# =====================================
+
+# Vesta (segundo asteroide más masivo)
+vesta_pos = [3.53e11, 0.5e11, 0]  # ~2.36 UA con pequeña inclinación
+vesta_vel = [-2e3, 19.3e3, 0]     # Velocidad con componente tangencial
+vesta = Body("Vesta", 2.59e20, vesta_pos, vesta_vel, color='#C2C2C2')
+
+# Pallas
+pallas_pos = [4.14e11, -0.3e11, 0.8e11]  # ~2.77 UA con inclinación
+pallas_vel = [1.5e3, 16.9e3, -0.5e3]     # Velocidad 3D
+pallas = Body("Pallas", 2.04e20, pallas_pos, pallas_vel, color='#A8A8A8')
+
+# Juno
+juno_pos = [3.99e11, 0.2e11, -0.2e11]    # ~2.67 UA
+juno_vel = [-1e3, 17.9e3, 0.3e3]         # Velocidad 3D
+juno = Body("Juno", 2.67e19, juno_pos, juno_vel, color='#B0B0B0')
+
+# =====================================
+# COMETAS FAMOSOS
+# =====================================
+
+# Cometa Halley (en afelio)
+halley_pos = [5.25e12, 0, 1.8e12]  # ~35 UA en afelio, inclinado
+halley_vel = [0, 0.91e3, -0.3e3]   # Velocidad muy baja en afelio
+halley = Body("Halley", 2.2e14, halley_pos, halley_vel, color='#E6E6E6')
+
+# =====================================
+# LUNAS PRINCIPALES
+# =====================================
+
+# Luna (satélite de la Tierra)
+luna_pos = [tierra_pos[0] + 3.844e8, 0, 0]  # 384,400 km de la Tierra
+luna_vel = [0, tierra_vel[1] + 1.022e3, 0]  # Velocidad orbital + velocidad lunar
+luna = Body("Luna", 7.342e22, luna_pos, luna_vel, color='#C0C0C0')
+
+# Io (luna de Júpiter)
+io_pos = [jupiter_pos[0] + 4.217e8, 0, 0]   # 421,700 km de Júpiter
+io_vel = [0, jupiter_vel[1] + 17.33e3, 0]   # Velocidad de Júpiter + orbital de Io
+io = Body("Io", 8.932e22, io_pos, io_vel, color='#FFFF99')
+
+# Europa (luna de Júpiter)
+europa_pos = [jupiter_pos[0] + 6.709e8, 0, 0]  # 670,900 km de Júpiter
+europa_vel = [0, jupiter_vel[1] + 13.74e3, 0]  # Velocidad de Júpiter + orbital
+europa = Body("Europa", 4.800e22, europa_pos, europa_vel, color='#87CEEB')
+
+# Titán (luna de Saturno)
+titan_pos = [saturno_pos[0] + 1.222e9, 0, 0]   # 1,221,830 km de Saturno
+titan_vel = [0, saturno_vel[1] + 5.57e3, 0]    # Velocidad de Saturno + orbital
+titan = Body("Titán", 1.345e23, titan_pos, titan_vel, color='#DEB887')
+
+# =====================================
+# LISTA COMPLETA DE CUERPOS
+# =====================================
+
+# Sistema completo (puedes elegir cuáles incluir)
+sistema_completo = [
+    sol,
+    # Planetas
+    mercurio, venus, tierra, marte, 
+    jupiter, saturno, urano, neptuno,
+    # Planetas enanos
+    pluton, ceres,
+    # Asteroides
+    vesta, pallas, juno,
+    # Cometas
+    halley,
+    # Lunas
+    luna, io, europa, titan
+]
+
+# Sistema simplificado (solo planetas principales)
+sistema_planetas = [
+    sol, mercurio, venus, tierra, marte, 
+    jupiter, saturno, urano, neptuno
+]
+
+# Sistema interior (hasta Marte + cinturón de asteroides)
+sistema_interior = [
+    sol, mercurio, venus, tierra, luna, marte, 
+    ceres, vesta, pallas, juno
+]
+
+# Sistema exterior (gigantes gaseosos + lunas)
+sistema_exterior = [
+    sol, jupiter, saturno, urano, neptuno,
+    io, europa, titan, pluton
+]
+
